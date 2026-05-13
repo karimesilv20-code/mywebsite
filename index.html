@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--The <title> tag is the name that shows up in the browser tab-->
+  <title>Clint Tuttle's Webpage</title>
+
+  <!--This line connects our HTML page to a separate CSS file called style.css.
+      CSS controls how the page looks (colors, fonts, spacing).
+      Keeping CSS in its own file is a best practice—it keeps HTML clean.-->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!--This is the title at the top of the page-->
+  <h1 class="page-title">Karyme's Webpage</h1>
+
+  <!--Three photos in a horizontal row.
+      The middle one is NOT actually me—see the caption below.
+      Lesson for class: alt text should always be honest about what an image is.-->
+  <div class="photo-row">
+    <img class="row-photo"
+         alt="A photo that is NOT actually Clint Tuttle (this is an actor, not me)"
+         src="NotReallyClint.jpg" />
+    <img class="row-photo"
+         alt="Clint playing acoustic guitar on stage, black and white photo"
+         src="ClintGuitar.jpg" />
+  </div>
+  <p class="caption">
+    <em>Bolivia salt flats, a guy who is definitely not me, and me playing guitar.
+    Lesson: never trust a photo just because someone labeled it&mdash;always verify the source!</em>
+  </p>
+
+  <!--This is the About Me paragraph-->
+  <p class="about-me">
+    HI! I'm Karyme G. Silva, and I am an accounting student at the Mccombs 
+	School of Business at the University of Texas at Austin.I am also a pre-law
+	student minoring in Law, Justice, and Society. I am hoping to become an attornney
+	one day, maybe corporate law is in my future. Some of my hobbies are singing, 
+	dancing, and learning new cooking recipes. I also love traveling and exploring. 
+	I am excited for this new adventure studying abroad in London! HOOK 'EM!
+  </p>
+
+  <hr />
+
+  <!--Work experience as a bulleted list-->
+  <h3>My Work Experience</h3>
+  <ul>
+    <li><strong>Law Offices of Richard Pena </strong> &mdash; Bilingual Legal Receptionist (2026 &ndash; Present)</li>
+    <li><strong>Lark Austin</strong> &mdash; Experienced Team Member (2026 &ndash; Present)</li>
+    <li><strong>McCombs Success Scholars</strong> &mdash; Peer Mentor (2025 &ndash; Present)</li>
+    <li><strong>The Edutainment Zone</strong> &mdash; Personal Assistant (2025 &ndash; Present)</li>
+  </ul>
+
+  <hr />
+
+  <!--My Favorite Things: a bulleted list of links-->
+  <h3>My Favorite Things</h3>
+  <ul>
+    <li><a href="https://share.google/SL4rOt5BO9bbN04e1" target="_blank">Dallas Cowboys Cheerleaders</a> &mdash; I love all of their shows and all their talent</li>
+    <li><a href="https://htmlcolorcodes.com/colors/pastel-purple/" target="_blank">Purple</a> &mdash; I have an obsession with the color purple (my whole room is purple)</li>
+    <li><a href="https://share.google/NkqD9DlVFzWo6dwRR" target="_blank">I love watching movies at different Movie Theaters</li>
+  </ul>
+
+  <hr />
+
+  <!--YouTube videos: each one is an iframe.
+      Tip for students: to add your own, go to YouTube > Share > Embed,
+      and copy the FULL iframe tag.-->
+  <h3>Random fun thing about me</h3>
+
+  <div class="video-grid">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/42cH4QOrAy8?si=nxMNYzFlhRFycYbq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <hr />
+
+  <!--Contact section.
+      The mailto: link opens the user's email program.
+      LinkedIn opens in a new tab.-->
+  <h3>Contact Me</h3>
+  <p class="contact-line">
+    <a href="mailto:clint.tuttle@mccombs.utexas.edu">clint.tuttle@mccombs.utexas.edu</a>
+    &nbsp;|&nbsp;
+    <a href="http://www.linkedin.com/in/clinttuttle" target="_blank">My LinkedIn Profile</a>
+  </p>
+
+  <!--Footer with copyright-->
+  <footer class="page-footer">
+    Copyright &copy; 2026 Clint Tuttle. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Karyme's Crossword Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .crossword-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #7a5c99;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .cw-grid {
+      display: inline-grid;
+      gap: 2px;
+      margin-bottom: 24px;
+      border: 2px solid #7a5c99;
+      padding: 4px;
+      background: #f3eef8;
+    }
+    .cell {
+      width: 38px;
+      height: 38px;
+      position: relative;
+      background: white;
+      border: 1px solid #c9b8e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cell.black {
+      background: #2c2c2a;
+      border-color: #2c2c2a;
+    }
+    .cell input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #2c2c2a;
+      outline: none;
+      cursor: pointer;
+      caret-color: transparent;
+    }
+    .cell input:focus { background: #e8d9f7; }
+    .cell input.correct { color: #0f6e56; }
+    .cell input.wrong   { color: #a32d2d; }
+    .num {
+      position: absolute;
+      top: 2px;
+      left: 3px;
+      font-size: 9px;
+      color: #888;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .clues-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 32px;
+      margin-top: 8px;
+    }
+    .clue-group h3 {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0 0 10px;
+      color: #7a5c99;
+      border-bottom: 2px solid #c9b8e0;
+      padding-bottom: 4px;
+    }
+    .clue-item {
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: #333;
+      line-height: 1.5;
+    }
+    .clue-item strong { color: #7a5c99; }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-row button {
+      padding: 8px 18px;
+      border-radius: 6px;
+      border: 2px solid #7a5c99;
+      background: white;
+      color: #7a5c99;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-row button:hover {
+      background: #7a5c99;
+      color: white;
+    }
+
+    .status-msg {
+      font-size: 14px;
+      color: #7a5c99;
+      font-weight: bold;
+      margin-bottom: 12px;
+      min-height: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .clues-section { grid-template-columns: 1fr; }
+      .cell { width: 30px; height: 30px; }
+      .cell input { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="crossword-page">
+
+    <a class="back-link" href="index.html">&larr; Back to Home</a>
+
+    <h1 class="page-title">Karyme's Crossword Puzzle</h1>
+    <p class="about-me">Can you guess all of Karyme's favorite things? Fill in the blanks!</p>
+
+    <div class="status-msg" id="status"></div>
+
+    <div class="btn-row">
+      <button onclick="checkAll()">Check Answers</button>
+      <button onclick="revealAll()">Reveal All</button>
+      <button onclick="resetAll()">Reset</button>
+    </div>
+
+    <div class="cw-grid" id="grid"></div>
+
+    <div class="clues-section">
+      <div class="clue-group">
+        <h3>Across</h3>
+        <div id="across-clues"></div>
+      </div>
+      <div class="clue-group">
+        <h3>Down</h3>
+        <div id="down-clues"></div>
+      </div>
+    </div>
+
+    <hr />
+
+    <footer class="page-footer">
+      Copyright &copy; 2026 Karyme G. Silva. All Rights Reserved.
+    </footer>
+
+  </div>
+
+  <script>
+    // Each word: [word, startRow, startCol, direction, clueNumber, clueText]
+    const WORDS = [
+      ["PURPLE",  0, 0, "across", 1, "Karyme's favorite color — her whole room is this"],
+      ["COWBOYS",  2, 0, "across", 3, "Dallas ___ Cheerleaders (her favorite show)"],
+      ["SINGING",  4, 0, "across", 5, "One of Karyme's hobbies — she loves to do this"],
+      ["DANCING",  6, 0, "across", 7, "Another fun hobby she shares with singing"],
+      ["MOVIES",   8, 0, "across", 9, "She loves watching these at different theaters"],
+      ["COOKING",  0, 4, "down",   2, "Karyme loves learning new ___ recipes"],
+      ["AUSTIN",   2, 2, "down",   4, "The city where UT is located"],
+      ["LONDON",   4, 5, "down",   6, "City she is studying abroad in"],
+      ["TRAVEL",   6, 3, "down",   8, "She loves this — exploring new places"],
+    ];
+
+    const ROWS = 10;
+    const COLS = 10;
+
+    const gridData = Array.from({length: ROWS}, () => Array(COLS).fill(null));
+    const answers  = Array.from({length: ROWS}, () => Array(COLS).fill(''));
+    const cellNums = Array.from({length: ROWS}, () => Array(COLS).fill(0));
+
+    WORDS.forEach(([word, r, c, dir, num]) => {
+      cellNums[r][c] = num;
+      for (let i = 0; i < word.length; i++) {
+        const row = dir === 'across' ? r     : r + i;
+        const col = dir === 'across' ? c + i : c;
+        if (row < ROWS && col < COLS) {
+          gridData[row][col] = word[i];
+          answers[row][col]  = word[i];
+        }
+      }
+    });
+
+    function buildGrid() {
+      const el = document.getElementById('grid');
+      el.style.gridTemplateColumns = 'repeat(' + COLS + ', 38px)';
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          const cell = document.createElement('div');
+          cell.className = gridData[r][c] ? 'cell' : 'cell black';
+          if (gridData[r][c]) {
+            if (cellNums[r][c]) {
+              const n = document.createElement('div');
+              n.className = 'num';
+              n.textContent = cellNums[r][c];
+              cell.appendChild(n);
+            }
+            const inp = document.createElement('input');
+            inp.maxLength = 1;
+            inp.setAttribute('type', 'text');
+            inp.dataset.r = r;
+            inp.dataset.c = c;
+            inp.addEventListener('input', onInput);
+            inp.addEventListener('keydown', onKey);
+            cell.appendChild(inp);
+          }
+          el.appendChild(cell);
+        }
+      }
+    }
+
+    function getInput(r, c) {
+      if (r < 0 || r >= ROWS || c < 0 || c >= COLS) return null;
+      return document.querySelector('input[data-r="' + r + '"][data-c="' + c + '"]');
+    }
+
+    function onInput(e) {
+      const inp = e.target;
+      const r = +inp.dataset.r, c = +inp.dataset.c;
+      inp.classList.remove('correct', 'wrong');
+      if (inp.value) {
+        const next = getInput(r, c + 1) || getInput(r + 1, c);
+        if (next) next.focus();
+      }
+    }
+
+    function onKey(e) {
+      const inp = e.target;
+      const r = +inp.dataset.r, c = +inp.dataset.c;
+      if (e.key === 'Backspace' && !inp.value) {
+        const prev = getInput(r, c - 1) || getInput(r - 1, c);
+        if (prev) { prev.value = ''; prev.focus(); }
+      }
+      if (e.key === 'ArrowRight') { e.preventDefault(); const n = getInput(r, c+1); if(n) n.focus(); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); const n = getInput(r, c-1); if(n) n.focus(); }
+      if (e.key === 'ArrowDown')  { e.preventDefault(); const n = getInput(r+1, c); if(n) n.focus(); }
+      if (e.key === 'ArrowUp')    { e.preventDefault(); const n = getInput(r-1, c); if(n) n.focus(); }
+    }
+
+    function checkAll() {
+      let correct = 0, total = 0;
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          const inp = getInput(r, c);
+          if (!inp) continue;
+          total++;
+          inp.classList.remove('correct', 'wrong');
+          if (inp.value.toUpperCase() === answers[r][c]) {
+            inp.classList.add('correct'); correct++;
+          } else if (inp.value) {
+            inp.classList.add('wrong');
+          }
+        }
+      }
+      document.getElementById('status').textContent =
+        correct === total
+          ? "Perfect score! You know all of Karyme's favorite things!"
+          : correct + ' of ' + total + ' letters correct.';
+    }
+
+    function revealAll() {
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          const inp = getInput(r, c);
+          if (inp) { inp.value = answers[r][c]; inp.classList.add('correct'); }
+        }
+      }
+      document.getElementById('status').textContent = "Revealed! Now you know all of Karyme's favorites!";
+    }
+
+    function resetAll() {
+      for (let r = 0; r < ROWS; r++) {
+        for (let c = 0; c < COLS; c++) {
+          const inp = getInput(r, c);
+          if (inp) { inp.value = ''; inp.classList.remove('correct', 'wrong'); }
+        }
+      }
+      document.getElementById('status').textContent = '';
+    }
+
+    function buildClues() {
+      const acrossEl = document.getElementById('across-clues');
+      const downEl   = document.getElementById('down-clues');
+      WORDS.forEach(([word, r, c, dir, num, clue]) => {
+        const el = document.createElement('div');
+        el.className = 'clue-item';
+        el.innerHTML = '<strong>' + num + '.</strong> ' + clue + ' (' + word.length + ' letters)';
+        (dir === 'across' ? acrossEl : downEl).appendChild(el);
+      });
+    }
+
+    buildGrid();
+    buildClues();
+  </script>
+
+</body>
+</html>
